@@ -5,6 +5,7 @@ const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
 
 const app = express();
+const port = process.env.PORT || 3000;
 
 // Chú ý: nodemon chỉ restart server khi có sự thay đổi trong các file có đuôi như .js
 // file .hbs thay đổi nhưng nodemon ko restart lại server 
@@ -99,6 +100,7 @@ app.get('*', (req, res) => {
 hướng đến route đó. Nếu để ở trên express sẽ chạy route này trước nên sẽ luôn báo lỗi Not found
 */
 
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log('Server is up on port 3000');
 })
+
